@@ -1,6 +1,7 @@
 package org.example;
 
-import org.example.algorithms.Multiplication;
+import org.example.algorithms.KaratsubaMultiply;
+import org.example.algorithms.StandardMultiply;
 
 import java.math.BigInteger;
 import java.util.Scanner;
@@ -16,12 +17,14 @@ public class Main {
         System.out.println("Second number");
 
         BigInteger second = scanner.nextBigInteger();
-        Multiplication multiplication = new Multiplication(first, second);
+
         if (algorithm == 1) {
-            BigInteger result = multiplication.standardMultiplication();
+            StandardMultiply standardMultiply = new StandardMultiply();
+            BigInteger result = standardMultiply.multiply(first, second);
             System.out.printf("(standard method) first %s second %s = %s", first, second, result);
         } else {
-            BigInteger result = multiplication.karatsubaMultiplication();
+            KaratsubaMultiply karatsubaMultiply = new KaratsubaMultiply();
+            BigInteger result = karatsubaMultiply.multiply(first, second);
             System.out.printf("(karatsuba method) first %s second %s = %s", first, second, result);
         }
     }

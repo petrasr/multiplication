@@ -2,21 +2,9 @@ package org.example.algorithms;
 
 import java.math.BigInteger;
 
-public class Multiplication {
-
-    private final BigInteger firstNumber;
-    private final BigInteger secondNumber;
-
-    public Multiplication(BigInteger firstNumber, BigInteger secondNumber) {
-        this.firstNumber = firstNumber;
-        this.secondNumber = secondNumber;
-    }
-
-    public BigInteger standardMultiplication() {
-        return firstNumber.multiply(secondNumber);
-    }
-
-    public BigInteger karatsubaMultiplication() {
+public class KaratsubaMultiply implements Multiply {
+    @Override
+    public BigInteger multiply(BigInteger firstNumber, BigInteger secondNumber) {
         return karatsuba(firstNumber, secondNumber);
     }
 
